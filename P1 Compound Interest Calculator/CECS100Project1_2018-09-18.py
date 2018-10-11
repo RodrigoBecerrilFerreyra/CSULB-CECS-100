@@ -1,5 +1,5 @@
-# NAME
-# XXXXXXXXX
+# Rodrigo Becerril Ferreyra
+# 017584071
 # CECS 100 Autumn 2018
 # 2018-09-18
 # Project 1
