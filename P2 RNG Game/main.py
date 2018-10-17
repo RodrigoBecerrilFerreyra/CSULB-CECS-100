@@ -71,7 +71,7 @@ def main():
                     print(" You have " + str(wrong) + " try left.")
 
                 if wrong == 0:
-                    print("Aww! You ran out of lives! Try again next time!")
+                    print("Aww! You ran out of lives! Your score was " + str(score) + ". Try again next time!")
                     break
 
             else:
