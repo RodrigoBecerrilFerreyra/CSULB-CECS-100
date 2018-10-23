@@ -124,6 +124,24 @@ def guessgame():
             print("\nYou didn't enter a valid number!")
 
 def main():
-    guessgame()
+    print("Welcome to RNG Games! Please choose a game to play.")
+    print("1: Math Game\n2: Guessing Game\n3: Help")
+    while(True):
+        try:
+            ui = int(input())
+            if(ui > 3):
+                raise ValueError
+            break
+        except ValueError:
+            print("\nPlease input either a 1, a 2, or a 3.")
+    
+    if ui==1:
+        mathgame()
+    elif ui==2:
+        guessgame()
+    else:
+        #printhelp()
+        pass
+    
 # Call to main function.
 main()
