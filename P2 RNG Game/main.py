@@ -80,7 +80,42 @@ def mathgame():
         except ValueError:
             print("\nOops! That is not a valid number. Try removing any spaces or commas.")
 
+def guessgame():
+
+    score = 0
+
+    # Generate random numbers 1 <= x <= 20 and put them in a list of 100 elements
+    # Pick one element at random and put it into a variable
+    seed = (time.time() * 10000000)
+    numlist = []
+
+    for i in range(100):
+        seed = (rng(seed) % 20) + 1
+        numlist.append(seed)
+    num1 = numlist[rng(seed) % 100]
+
+    print("The answer is", num1)
+    while(True):
+        try:
+            ui = int(input())
+
+            if ui == num1:
+                print("You got it!")
+                break
+            elif ui < num1:
+                if (ui + 4) >= num1:
+                    print("You are close, but you undershot.", num1)
+                else:
+                    print("You undershot.", num1)
+            elif ui > num1:
+                if (ui - 4) <= num1:
+                    print("You are close, but you overshot.", num1)
+                else:
+                    print("You overshot.", num1)
+        except ValueError:
+            print("You didn't enter a valid number!")
+
 def main():
-    mathgame()
+    guessgame()
 # Call to main function.
 main()
