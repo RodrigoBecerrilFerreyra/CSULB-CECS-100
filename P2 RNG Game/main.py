@@ -16,8 +16,7 @@ import time
 def rng(seed):
     return int((2 * seed + 0) % 6997) #range: 1 to 6997
 
-def main():
-
+def mathgame():
     # Will keep track of player's winning streak.
     score = 0
     # Will keep track of player's wrong misses.
@@ -81,5 +80,7 @@ def main():
         except ValueError:
             print("\nOops! That is not a valid number. Try removing any spaces or commas.")
 
+def main():
+    mathgame()
 # Call to main function.
 main()
