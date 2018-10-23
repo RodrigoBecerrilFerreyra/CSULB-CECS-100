@@ -124,6 +124,21 @@ def guessgame():
         except ValueError:
             print("\nYou didn't enter a valid number!")
 
+def printhelp():
+    print("""
+    Math Game:
+        In this game, you must calculate the simple addition equation seen on screen.
+        Make sure to get it right; you only have three tries!
+        Don't worry, you are not timed, so take all the time you want.
+        See how far you can go!
+    Guessing Game:
+        In this game, you must guess which number the computer is thinking of.
+        The number is a number between 1 and 20.
+        You get three guesses, so make sure to get it right!
+        If you get close to the number, you will get a hint as to how far you are.
+        Try to guess the number in the least amount of tries!
+    """)
+
 def main():
     print("Welcome to RNG Games! Please choose a game to play.")
     print("1: Math Game\n2: Guessing Game\n3: Help")
@@ -141,8 +156,8 @@ def main():
     elif ui==2:
         guessgame()
     else:
-        #printhelp()
-        pass
+        printhelp()
+        main()
     
 # Call to main function.
 main()
