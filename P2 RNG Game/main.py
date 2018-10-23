@@ -82,7 +82,7 @@ def mathgame():
 
 def guessgame():
 
-    score = 0
+    wrong = 3
 
     # Generate random numbers 1 <= x <= 20 and put them in a list of 100 elements
     # Pick one element at random and put it into a variable
@@ -94,26 +94,34 @@ def guessgame():
         numlist.append(seed)
     num1 = numlist[rng(seed) % 100]
 
-    print("The answer is", num1)
+    print("I'm thinking of a number between one and twenty. What number is it?\nYou get three tries.")
     while(True):
         try:
             ui = int(input())
 
             if ui == num1:
-                print("You got it!")
+                print("\nYou got it!")
                 break
             elif ui < num1:
                 if (ui + 4) >= num1:
-                    print("You are close, but you undershot.", num1)
+                    print("\nYou are close, but you undershot.")
+                    wrong -= 1
                 else:
-                    print("You undershot.", num1)
+                    print("\nYou undershot.")
+                    wrong -= 1
             elif ui > num1:
                 if (ui - 4) <= num1:
-                    print("You are close, but you overshot.", num1)
+                    print("\nYou are close, but you overshot.")
+                    wrong -= 1
                 else:
-                    print("You overshot.", num1)
+                    print("\nYou overshot.")
+                    wrong -= 1
+            
+            if wrong <= 0:
+                print("\nAww, you're out of lives! The answer was " + str(num1) + ". Try again next time.")
+                break
         except ValueError:
-            print("You didn't enter a valid number!")
+            print("\nYou didn't enter a valid number!")
 
 def main():
     guessgame()
