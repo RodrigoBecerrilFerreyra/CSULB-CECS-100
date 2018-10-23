@@ -26,7 +26,7 @@ def mathgame():
     numlist = []
 
     # Instructions
-    print("\nSimplify the expression. Get it  three times and it's game over!\n")
+    print("\nWelcome to Math Game!\nSimplify the expression. Get it  three times and it's game over!\n")
 
     # Gives the initial seed for random number generation.
     # * 10000000 ensures a whole number while keeping precision.
@@ -94,7 +94,8 @@ def guessgame():
         numlist.append(seed)
     num1 = numlist[rng(seed) % 100]
 
-    print("I'm thinking of a number between one and twenty. What number is it?\nYou get three tries.")
+    print("\nWelcome to Guessing Game!\nI'm thinking of a number between one and twenty. What number is it?")
+    print("You get three tries.")
     while(True):
         try:
             ui = int(input())
@@ -103,14 +104,14 @@ def guessgame():
                 print("\nYou got it!")
                 break
             elif ui < num1:
-                if (ui + 4) >= num1:
+                if (ui + 5) >= num1:
                     print("\nYou are close, but you undershot.")
                     wrong -= 1
                 else:
                     print("\nYou undershot.")
                     wrong -= 1
             elif ui > num1:
-                if (ui - 4) <= num1:
+                if (ui - 5) <= num1:
                     print("\nYou are close, but you overshot.")
                     wrong -= 1
                 else:
