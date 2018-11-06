@@ -16,7 +16,18 @@ def twopoints():
 	print("\ntwo points")
 
 def slopeint():
-	print("\nslopeint")
+	print("\nEnter the slope and y-intercept of your function as prompted.")
+	m = float(input("m = "))
+	b = float(input("y = "))
+
+	x = [-10, 0, 10]
+	y = [m*x[0]+b, b, m*x[2]+b]
+	#for i in x:
+	#	y.append(b + (m * i))
+
+	plt.plot(x, y, "ro")
+	plt.plot(x, y, "r")
+	plt.show()
 
 def main():
 	print("Plot a graph using pyplot!")
