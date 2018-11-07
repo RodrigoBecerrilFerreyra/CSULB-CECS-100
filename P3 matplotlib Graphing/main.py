@@ -13,7 +13,29 @@ or by a slope and a y-intercept. The required parameters will be inputed by the 
 import matplotlib.pyplot as plt
 
 def twopoints():
-	print("\ntwo points")
+	print("\nEnter the coordinates of your two points as prompted.")
+	x1 = float(input("X₁ = "))
+	y1 = float(input("Y₁ = "))
+	x2 = float(input("X₂ = "))
+	y2 = float(input("Y₂ = "))
+
+	m = (y2 - y1)/(x2 - x1)
+
+	# y = m(x - x1) + y1
+
+	x = [-10, 0, 10, x1, x2]
+	y = []
+
+	for i in x:
+		y.append( (m * (i - x1) ) + y1 )
+
+	plt.plot(x, y, "r")
+
+	if(x1 > 10) or (x2 > 10):
+		plt.plot([x[3], x[4]], [y[3], y[4]], "ro")
+	else:
+		plt.plot([x[0], x[2], x[3], x[4]], [y[0], y[2], y[3], y[4]], "ro")
+	plt.show()
 
 def slopeint():
 	print("\nEnter the slope and y-intercept of your function as prompted.")
