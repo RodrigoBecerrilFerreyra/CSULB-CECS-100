@@ -3,7 +3,7 @@
 # Start date: 06 November 2018
 # End date: 08 November 2018
 # Name: Rodrigo Becerril Ferreyra
-#ID: 017584071
+# ID: 017584071
 
 '''
 This program is intended to graph the line defined either by two points
@@ -14,42 +14,59 @@ import matplotlib.pyplot as plt
 
 def twopoints():
 	print("\nEnter the coordinates of your two points as prompted.")
-	x1 = float(input("X₁ = "))
-	y1 = float(input("Y₁ = "))
-	x2 = float(input("X₂ = "))
-	y2 = float(input("Y₂ = "))
+	while True:
+		try:
+			x1 = float(input("X₁ = "))
+			y1 = float(input("Y₁ = "))
+			x2 = float(input("X₂ = "))
+			y2 = float(input("Y₂ = "))
+			error = False
+			break
+		except ValueError:
+			error = True
+			print("You didn't enter an integer. Please try again.")
 
-	m = (y2 - y1)/(x2 - x1)
+	if(not error):
+		m = (y2 - y1)/(x2 - x1)
 
-	# y = m(x - x1) + y1
+		# y = m(x - x1) + y1
 
-	x = [-10, 0, 10, x1, x2]
-	y = []
+		x = [-10, 0, 10, x1, x2]
+		y = []
 
-	for i in x:
-		y.append( (m * (i - x1) ) + y1 )
+		for i in x:
+			y.append( (m * (i - x1) ) + y1 )
 
-	plt.plot(x, y, "r")
+		plt.plot(x, y, "r")
 
-	if(x1 > 10) or (x2 > 10):
-		plt.plot([x[3], x[4]], [y[3], y[4]], "ro")
-	else:
-		plt.plot([x[0], x[2], x[3], x[4]], [y[0], y[2], y[3], y[4]], "ro")
-	plt.show()
+		if(x1 > 10) or (x2 > 10):
+			plt.plot([x[3], x[4]], [y[3], y[4]], "ro")
+		else:
+			plt.plot([x[0], x[2], x[3], x[4]], [y[0], y[2], y[3], y[4]], "ro")
+		plt.show()
 
 def slopeint():
 	print("\nEnter the slope and y-intercept of your function as prompted.")
-	m = float(input("m = "))
-	b = float(input("y = "))
 
-	x = [-10, 0, 10]
-	y = [m*x[0]+b, b, m*x[2]+b]
-	#for i in x:
-	#	y.append(b + (m * i))
+	while True:
+		try:
+			m = float(input("m = "))
+			b = float(input("y = "))
+			error = False
+			break
+		except ValueError:
+			error = True
+			print("You didn't enter an integer. Please try again.")
 
-	plt.plot(x, y, "ro")
-	plt.plot(x, y, "r")
-	plt.show()
+	if(not error):
+		x = [-10, 0, 10]
+		y = [m*x[0]+b, b, m*x[2]+b]
+		#for i in x:
+		#	y.append(b + (m * i))
+
+		plt.plot(x, y, "ro")
+		plt.plot(x, y, "r")
+		plt.show()
 
 def main():
 	print("Plot a graph using pyplot!")
