@@ -1,1 +1,0 @@
-This project was simple enough for a first project; all we did was simple input and calculations. Nothing worth noticing here.
