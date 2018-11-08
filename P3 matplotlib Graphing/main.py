@@ -56,6 +56,7 @@ def twopoints():
 		else:
 			# graph x = 10 and x = -10
 			plt.plot([x[0], x[2], x[3], x[4]], [y[0], y[2], y[3], y[4]], "ro")
+		plt.grid()
 		plt.show()
 
 # plot a line using a user-defined slope and y-intercept
@@ -86,6 +87,7 @@ def slopeint():
 		# plot the graph
 		plt.plot(x, y, "ro")
 		plt.plot(x, y, "r")
+		plt.grid()
 		plt.show()
 
 def main():
