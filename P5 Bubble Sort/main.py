@@ -8,6 +8,9 @@
 # Description:
 # 	Manual bubble sort algorithm
 
+def bubble(list):
+	end = len(list) - 1
+
 def main():
 	pass
 	
