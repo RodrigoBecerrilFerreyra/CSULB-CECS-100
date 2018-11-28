@@ -13,23 +13,22 @@ def bubble(oldlist, end=-1):
 
 	Returns a list sorted from least to greatest.
 	"""
-	newlist = oldlist
+
 	if end==-1:
-		end = len(newlist)
+		end = len(oldlist)
 	
 	if end <= 1:
-		return newlist
+		return oldlist
 	else:
 		for i in range(end-1):
-			if newlist[i] > newlist[i+1]:
-				newlist[i] = newlist[i] + newlist[i+1]
-				newlist[i+1] = newlist[i] - newlist[i+1]
-				newlist[i] = newlist[i] - newlist[i+1]
+			if oldlist[i] > oldlist[i+1]:
+				oldlist[i] = oldlist[i] + oldlist[i+1]
+				oldlist[i+1] = oldlist[i] - oldlist[i+1]
+				oldlist[i] = oldlist[i] - oldlist[i+1]
 
-		return bubble(newlist, end-1)
+		return bubble(oldlist, end-1)
 
 def main():
-	list1 = [5, 2, 1, -6, 54, 4, 1, 1]
-	print(bubble(list1))
+	print(bubble([5, 2, 6, 1]))
 	
 main()
