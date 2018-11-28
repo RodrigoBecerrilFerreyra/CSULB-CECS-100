@@ -8,8 +8,20 @@
 # Description:
 # 	Manual bubble sort algorithm
 
-def bubble(list):
-	end = len(list) - 1
+def bubble(oldlist, end):
+	"""Usage: newlist = bubble(oldlist, len(oldlist))
+
+	Returns a list sorted from least to greatest.
+	"""
+	if end <= 1:
+		return oldlist
+	else:
+		for i in range(end):
+			if oldlist[i] < oldlist[i+1]:
+				oldlist[i] = oldlist[i] + oldlist[i+1]
+				oldlist[i+1] = oldlist[i] - oldlist[i+1]
+				oldlist[i] = oldlist[i] - oldlist[i+1]
+		bubble(oldlist, end-1)
 
 def main():
 	pass
