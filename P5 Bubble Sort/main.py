@@ -33,6 +33,18 @@ def bubble(oldlist, end=-1):
 		return bubble(oldlist, end-1) #recursive (calls itself)
 
 def main():
-	print(bubble([5, 2, 6, 1]))
 	
+	list1 = []
+
+	print("Please input a series of numbers.\n"
+	      "When you are finished, press enter again.\n")
+
+	while True:
+		try:
+			list1.append(int(input()))
+		except (ValueError, EOFError) as e:
+			break
+
+	print("Your sorted list is " + str(bubble(list1)))
+
 main()
