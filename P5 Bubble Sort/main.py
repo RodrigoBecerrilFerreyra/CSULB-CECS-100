@@ -2,7 +2,7 @@
 # Project 5
 # "Bubble Sort"
 # Start date: 2018-11-27
-# End date: 
+# Turn-in date: 
 # Name: Rodrigo Becerril Ferreyra
 # ID Number: 017584071
 # Description:
@@ -18,7 +18,7 @@ def bubble(oldlist, end=-1):
 	if end==-1:
 		end = len(oldlist)
 	
-	# Base case: the function is finished, and shuld be returned
+	# Base case: the function is finished, and should be returned
 	if end <= 1:
 		return oldlist
 	# Recursive case: calculate list and try again	
@@ -36,7 +36,7 @@ def main():
 	
 	list1 = []
 
-	print("Please input a series of numbers.\n"
+	print("Please input a series of integers.\n"
 	      "When you are finished, press enter again.\n")
 
 	while True:
