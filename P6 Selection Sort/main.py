@@ -1,3 +1,8 @@
+# Selection Sort
+# Project 6
+# CECS 100
+# Name: Rodrigo Becerril Ferreyra
+# ID: 017584071
 def selection(oldlist, start=-1):
     if start == -1:
         start = 0
