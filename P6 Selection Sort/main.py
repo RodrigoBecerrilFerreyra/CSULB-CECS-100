@@ -5,7 +5,7 @@
 # ID: 017584071
 def selection(oldlist, start=0):
 
-    if start == len(oldlist) - 1:
+    if (start <= len(oldlist) - 1) or (len(oldlist) == 0):
         return oldlist
     else:
         swap = oldlist.index(min(oldlist[start:]))
