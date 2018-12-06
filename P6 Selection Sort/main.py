@@ -21,6 +21,17 @@ def selection(oldlist, start=0):
         return selection(oldlist, start+1) #recursive function
 
 def main():
-    print(selection([10, 9, 8, 7, 0, 5, 4, 3, 2, 1]))
+	list1 = []
+
+	print("Please input a series of integers.\n"
+	      "When you are finished, press enter again.\n")
+
+	while True:
+		try:
+			list1.append(int(input()))
+		except (ValueError, EOFError) as e:
+			break
+
+	print("Your sorted list is " + str(selection(list1)))
 
 main()
