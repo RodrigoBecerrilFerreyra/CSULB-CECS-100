@@ -6,7 +6,7 @@
 def selection(oldlist, start=0):
 
     # Base case: list is already sorted
-    if (start <= len(oldlist) - 1) or (len(oldlist) == 0):
+    if (start >= len(oldlist) - 1) or (len(oldlist) == 0):
         return oldlist
     # Recursive case: Continue with swap
     else:
